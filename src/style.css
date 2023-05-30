@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply rounded-md py-2 px-4  text-xs font-bold cursor-pointer tracking-wide;
+}
+
+.btn2 {
+  @apply py-3 px-5 text-4xl font-medium cursor-pointer tracking-wide  rounded-lg leading-10;
+}
