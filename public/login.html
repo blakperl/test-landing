@@ -7,14 +7,16 @@
     <title>Login</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body class="">
-    <section class="h-screen">
-      <div class="flex justify-center">
-        <img src="./img/image.svg"  alt="" class="max-h-screen object-cover"/>
-        <div class="flex justify-center m-auto ">
-            <div class="">
-                <h1 class="font-bold text-2xl w-80 mb-2">Take your tests anywhere! Sign in to your account.</h1>
-                <p class="font-medium text-sm">If you don’t have an account, <a href="" class="underline">Sign up here</a></p>
+  <body class="overflow-hidden">
+    <section class="lg:h-screen ">
+      <div class="grid grid-cols-2 lg:place-content-evenly ">
+       <div class="overflow-hidden  shadow-md relative "> 
+        <img src="./img/image.svg"  alt="" class="w-full h-full object-cover "/>
+      </div>
+        <div class="flex lg:justify-center mt-16">
+            <div class="sm:px-8">
+                <h1 class="font-bold lg:text-2xl  sm:text-xl lg:w-80  sm:w-72 mb-2 ">Take your tests anywhere! Sign in to your account.</h1>
+                <p class="font-medium text-sm">If you don’t have an account, <a href="./signup.html" class="underline">Sign up here</a></p>
                 <div class="mb-6">
                   <label
                     for="large-input"
@@ -23,7 +25,7 @@
                   >
                   <input
                     type="text"
-                    class="block w-full p-3 text-gray-900  border-gray-500 rounded-lg border-2 " />
+                    class="block lg:w-full sm:w-72 p-3 text-gray-900  border-gray-500 rounded-lg border-2 " />
                 </div>
                 <div class="mb-6">
                   <label
@@ -33,14 +35,14 @@
                   >
                   <input
                     type="text"
-                    class="block w-full p-3 text-gray-900  border-gray-500 rounded-lg border-2 " />
-                    <div class="flex justify-between">
-                      <a href="" class="text-xs font-bold">show password</a>
+                    class="block lg:w-full sm:w-72 p-3 text-gray-900  border-gray-500 rounded-lg border-2 " />
+                    <div class="flex lg:justify-between">
+                      <a href="" class="text-xs font-bold sm:mr-24">show password</a>
                       <a href="" class="underline text-xs font-bold">forgot Password?</a>
                     </div>
-                <div class="bg-black text-white rounded-lg py-3 px-36 mt-4 text-center"><button class="block ">Continue</button></div>
-                <div class="bg-white text-black border-2 border-gray-500 rounded-lg py-3 px-28 mt-4 text-center"><button class="block">
-                    <img src="./img/google.svg" alt="" class="w-6 h-8 inline ">
+                <div class="bg-black text-white rounded-lg py-3 lg:px-44 sm:px-28 mt-4 text-center text-sm"><button class="block ">Continue</button></div>
+                <div class="bg-white text-black border-2 border-gray-500 rounded-lg py-3 lg:px-28 sm:px-14 mt-4 text-center text-sm"><button class="block">
+                    <img src="./img/google.svg" alt="" class="w-4 h-6 inline ">
                     Sign in with google</button></div>
               </div>
         </div>

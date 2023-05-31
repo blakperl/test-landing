@@ -7,5 +7,13 @@
 }
 
 .btn2 {
-  @apply py-3 px-5 text-4xl font-medium cursor-pointer tracking-wide  rounded-lg leading-10;
+  @apply lg:py-3 lg:px-8 sm:py-2  lg:font-medium lg:text-4xl sm:px-4 font-medium cursor-pointer tracking-wide  rounded-2xl ;
+}
+
+.link {
+  @apply flex justify-center items-center hover:text-gray-500 hover:underline mt-5;
+}
+
+.btn-mb:hover {
+  @apply text-black rounded-md py-2 px-4  text-xs font-bold cursor-pointer tracking-wide hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300;
 }
