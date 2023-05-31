@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testher</title>
     <link rel="stylesheet" href="output.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js"></script>
   </head>
   <body>
-    <section class="w-full mx-auto py-14 lg:px-20 px-5">
+    <header class="w-full mx-auto sm:mt-10 lg:py-2 lg:px-32 px-5"> 
       <div>
-        <div class="flex justify-between items-center mb-12">
+        <!--Desktop-->
+       
+        <div class=" hidden lg:flex justify-between items-center mb-12">
           <img src="./img/testher.svg" alt="" />
-          <nav class="lg:flex justify-between items-center ml-10 w-full">
+          <nav class=" hidden lg:flex justify-between items-center ml-10 w-full">
             <div class="flex gap-10 font-bold">
               <div>
                 <a href="">
@@ -48,27 +53,96 @@
             </div>
           </nav>
         </div>
-        <div>
-          <div class="items-center mb-16 grid grid-cols-4">
-            <img src="./img/world.svg" alt="" class="col-span-1" />
+        <!--mobile-->
+        <div class="flex justify-between items-center w-full lg:hidden"
+           x-data=" {open: false, toggle() { this.open = ! this.open }}">
+          <img src="./img/testher.svg" alt="" />
+          <div>
+            <button class="p-2 lg:hidden" @click="toggle()" x-show="!open">
+              <img src="./img/hamburger.svg" alt="" />
+            </button>
+            <button class="p-2 lg:hidden" @click="toggle()" x-show="open">
+              <img src="./img/icon-close.svg" alt="" />
+            </button>
+          </div>
+          <div  class="absolute inset-x-0 top-32 lg:hidden shadow-2xl rounded-lg z-10  "
+          x-show="open"
+          x-transition @click.outside="open = false">>
+            <nav  class="flex flex-col justify-center items-center t bg-white rounded-lg px-5 font-medium text-lg divide-y w-full">
+              <div class="w-full py-5 font-bold">
+                <div>
+                  <a href=""
+                  class="link">
+                    <span>How to work</span>
+                  </a>
+                </div>
+                <div>
+                  <a href=""
+                  class="link">
+                    <span>Review</span>
+                  </a>
+                </div>
+                <div>
+                  <a href=""
+                  class="link">
+                    <span>Live lesson</span>
+                  </a>
+                </div>
+                <div>
+                  <a href=""
+                  class="link">
+                    <span>Pricing</span>
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex flex-col justify-center items-center w-full py-5  font-bold ">
+                <form action="login.html">
+                  <button
+                    class="btn-mb mb-6 ">
+                    Log in
+                  </button>
+                </form>
+                  <form action="signup.html"><button
+                    class="btn-mb ">
+                    Sign up
+                  </button></form>
+              </div>
+              
+            </nav>
+          </div>
+        </div>
+       
+        <div class="tracking-wider flex flex-col justify-center items-center">
+          <div class=" sm:flex  mb-16 lg:grid lg:grid-cols-4  sm:mt-4 ">
+           
+              <div class="relative">
+                <div>
+                  <img src="./img/world.svg" alt="" class="lg:col-span-1 lg:mr-12 sm:mr-36  absolute" />
+                </div>
+                <div>
+                  <img src="./img/circle.svg" alt="" class="absolute top-0 bottom-2  ml-2 mt-2 w-14 h-10 border bg-yellow-300 rounded-full py-2 px-1">
+                </div>
+              </div>
 
-            <h1 class="flex justify-center col-span-2 text-green-950 text-6xl">
+            
+            <h1 class="flex  lg:col-span-2   text-green-950 lg:text-6xl text-4xl lg:mr-10 sm:mr-72 ">
               <span class="font-bold mr-2">Testher </span> makes
             </h1>
           </div>
 
           <div class="flex justify-center">
-            <button class="btn2 text-green-950 bg-yellow-100 mr-4">
+            <button class="btn2 text-green-950 bg-yellow-100 mr-6 ">
               Online tests
             </button>
-            <button class="btn2 border-2 border-gray-400 bg-white">
+            <button class=" btn2 border-2 border-gray-400 bg-white mr-12 ">
               Easy for all
             </button>
           </div>
-          <div class="flex justify-around mt-8">
-            <img src="./img/message.svg" alt="" class="ml-44" />
+          <div class="flex  mt-8 lg:justify-center">
+            <img src="./img/message.svg" alt="" class="lg:mb-14 lg:mr-18" />
             <div
-              class="flex justify-center w-2/4 p-8 text-center text-green-900">
+              class="flex justify-center lg:w-2/4 sm:p-2 lg:ml-14 lg:mr-14 lg:mt-8 text-center text-green-900  sm:text-sm ">
               <p>
                 We understand that preparing for exams can be a stressful time,
                 so we've made it our mission to make the process as simple and
@@ -78,13 +152,15 @@
                 can get a feel for how much time you'll need on test days.
               </p>
             </div>
-            <img src="./img/human.svg" alt="" class="object-cover mr-44" />
+            <img src="./img/human.svg" alt="" class="object-cover lg:mb-14" />
           </div>
           <div class="flex justify-center gap-6">
-            <button class=" btn ml-4 text-green-900 border-2 border-black bg-gray-100">
+            <div>
+              <button class="rounded-l-md py-3 px-4  text-xs font-bold cursor-pointer tracking-wide  text-green-900 border-y-2 border-l-2 border-black bg-white mr-0">
               Paste exam link
-              <!-- <img src="./img/arrow.svg" alt="" class="bg-black" /> -->
             </button>
+            <img src="./img/arrow.svg" alt="" class="inline bg-black py-3 px-4  text-xs font-bold cursor-pointer tracking-wide rounded-r-md  ml-0 "/>
+            </div>
             <button
               class="btn border-2 bg-black text-white hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">
               Create a Test
@@ -93,6 +169,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </header>
   </body>
 </html>
